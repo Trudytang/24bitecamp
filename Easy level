@@ -1,0 +1,27 @@
+#1.找出整型数组中占比超过一半的数
+小R从班级中抽取了一些同学，每位同学都会给出一个数字。已知在这些数字中，某个数字的出现次数超过了数字总数的一半。现在需要你帮助小R找到这个数字。
+def solution(array):
+    size = len(array)
+    mp = {}
+    for i in array:
+        mp[i] = mp.get(i, 0) + 1
+    for k in mp:
+        if mp.get(k) > size // 2:
+            return k
+    return 0
+#python
+
+if __name__ == "__main__":
+    # Add your test cases here
+    print(solution([1, 3, 8, 2, 3, 1, 3, 3, 3]) == 3)
+#2.小F的永久代币卡回本计划
+小F最近迷上了玩一款游戏，她面前有一个永久代币卡的购买机会。该卡片的价格为 a 勾玉，每天登录游戏可以返还 b 勾玉。小F想知道她至少需要登录多少天，才能让购买的永久代币卡回本。
+def solution(a: int, b: int) -> int:
+    return a // b + ( a % b != 0 )
+    return 0
+
+if __name__ == '__main__':
+    print(solution(10, 1) == 10)
+    print(solution(10, 2) == 5)
+    print(solution(10, 3) == 4)
+#
